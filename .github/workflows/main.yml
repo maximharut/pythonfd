@@ -2,7 +2,7 @@ name: Run Python Script Every 10 Minutes
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/1 * * * *"
 
 jobs:
   run-script:
@@ -23,4 +23,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run script
-      run: python main.py  # Remplacez 'your_script.py' par le nom de votre script
+      run: |
+        echo "Starting script execution..."
+        python main.py  # Remplacez 'your_script.py' par le nom de votre script
+        echo "Script execution finished."
